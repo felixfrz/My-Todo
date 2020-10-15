@@ -1,6 +1,11 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 const Footer = () => {
+ const [time, setTime] = useState('time');
+ let now = new Date().toLocaleTimeString();
+  setTimeout(()=>{
+     setTime(now)
+  }, 1000)
  return (
    <footer class='page-footer indigo darken-4'>
      <div class='container'>
@@ -50,7 +55,7 @@ const Footer = () => {
        </div>
      </div>
      <div class='footer-copyright'>
-       <div class='container center-align'>© 2020 Todo Felixfrz</div>
+       <div class='container center-align'>© 2020 Todo Felixfrz {time}</div>
      </div>
    </footer>
  )
